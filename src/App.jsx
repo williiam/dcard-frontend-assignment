@@ -11,13 +11,13 @@ function App() {
         <BrowserRouter>
           <Fragment>
             <Routes>
-              <Route path="/dcard-frontend-assignment/" element={ <Navigate replace to="/dcard-frontend-assignment/users/facebook/repos" /> } />
+              <Route path="/" element={ <Navigate replace to="/users/facebook/repos" /> } />
               <Route
-                path="/dcard-frontend-assignment/users/:username/repos"
+                path="/users/:username/repos"
                 element={<Home />}
               />
               <Route
-                path="/dcard-frontend-assignment/users/:username/repos/:reponame"
+                path="/users/:username/repos/:reponame"
                 element={<Repo />}
               />
             </Routes>
