@@ -24,7 +24,7 @@ function RepoCard({repoData}) {
       <div className="flex flex-row justify-around w-full">
         <div className="flex flex-row justify-around w-full">
           <a href={repoData?.html_url} target="_blank">
-            <h2 className="text-xl font-sans subpixel-antialiased font-normal hover:font-bold">
+            <h2 className="text-xl font-sans subpixel-antialiased font-normal">
               {repoData?.visibility}
             </h2>
           </a>

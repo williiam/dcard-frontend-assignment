@@ -1,7 +1,7 @@
 ## DCARD 2022 front-end-intern assignment
 #### DEMO:
 
-deplo網址
+https://dacrd-frontend-assignment.herokuapp.com/
 
 ## Installation and Setup Instructions
 
@@ -19,8 +19,6 @@ To Visit App:
 
 `localhost:3000/ideas`  
 
-//上註解
-//寫成hack md
 ## 架構設計說明
 
 此專案共有2個頁面

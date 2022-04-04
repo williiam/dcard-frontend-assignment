@@ -19,13 +19,6 @@ export default function App() {
   const { repos, hasMore, loading, error } = useRepoSearch(query, pageNumber);
   const { filter, handleFilterChange ,getFilterRepos} = useRepoFilter();
 
-  console.log("{ repos, hasMore, loading, error }", {
-    repos,
-    hasMore,
-    loading,
-    error,
-  });
-
   const observer = useRef();
 
   const lastrepoElementRef = useCallback(
