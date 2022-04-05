@@ -8,6 +8,7 @@ export default function useRepoSearch(query, pageNumber) {
   const [hasMore, setHasMore] = useState(false);
   const abortControllerRef = useRef(new AbortController());
   
+  // ajax wrapper
   let getRepo = async () => {
     try {
       console.log('query :', query);

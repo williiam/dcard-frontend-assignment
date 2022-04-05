@@ -13,14 +13,22 @@ import RepoItem from "../components/Home/RepoItem";
 export default function App() {
   const params = useParams();
   const username = params.username;
+
+  //搜尋參數
   const [query, setQuery] = useState({ userName: username });
+  
+  //目前repo頁數
   const [pageNumber, setPageNumber] = useState(1);
 
+  //{ 搜尋結果,還有資料,正在讀取,網路錯誤 } 
   const { repos, hasMore, loading, error } = useRepoSearch(query, pageNumber);
+
+  //{ 搜尋結果篩選條件,變更篩選條件,篩選結果產生器 }
   const { filter, handleFilterChange ,getFilterRepos} = useRepoFilter();
 
+  
+  // 負責觸發IntersectionObserver的ref
   const observer = useRef();
-
   const lastrepoElementRef = useCallback(
     (node) => {
       if (loading) return;
@@ -35,6 +43,7 @@ export default function App() {
     [loading, hasMore]
   );
 
+  //若取得搜尋結果有錯
   if (error) {
     return (
       <div className="container mx-auto">

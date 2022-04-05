@@ -15,6 +15,7 @@ function Repo() {
   const username = params.username;
   const reponame = params.reponame;
 
+  // 呼叫gitjubAPI: get user repos
   const getRepo = useCallback(async () => {
     const res = await axios.get(
       `https://api.github.com/repos/${username}/${reponame}`
@@ -24,6 +25,7 @@ function Repo() {
 
   const { loading, error, data } = useFetch(getRepo);
 
+  //樣板
   const Layout = (children) => {
     return (
       <div className="container mx-auto">

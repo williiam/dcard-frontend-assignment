@@ -16,8 +16,11 @@ function useRepoFilter(query) {
     });
   };
 
+  //repos篩選結果產生器
   const getFilterRepos = useCallback(
     (repos) => {
+
+      //排序
       if (filter.orderBy === "STAR") {
         repos = repos.sort((a, b) => a.stargazers_count - b.stargazers_count);
       } else if (filter.orderBy === "STAR_DESC") {
@@ -26,16 +29,17 @@ function useRepoFilter(query) {
         repos = repos.sort((a, b) => {
           let aTime = moment(a.pushed_at);
           let bTime = moment(b.pushed_at);
-          return aTime.diff(bTime); // true
+          return aTime.diff(bTime);
         });
       } else if (filter.orderBy === "LAST_PUSH_TIME_DESC") {
         repos = repos.sort((a, b) => {
           let aTime = moment(a.pushed_at);
           let bTime = moment(b.pushed_at);
-          return bTime.diff(aTime); // true
+          return bTime.diff(aTime);
         });
       }
 
+      //搜尋字串篩選
       if (filter.repoSearchTerm !== "") {
         repos = repos.filter((filteredRepo) =>
           filteredRepo.name
